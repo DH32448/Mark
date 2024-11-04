@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:include="main::nav"></div>
+<h3>更新我的密码</h3>
+<hr>
+<div>
+  <form action="/stu/updateMe" method="post">
+    <p><input type="hidden" name="uid" th:value="${id}"/></p>
+    <p>姓名:<input type="text" name="uname" th:value="${u.uname}"/></p>
+    <p>手机:<input type="text" name="phone" th:value="${u.phone}"/></p>
+    <p>密码:<input type="text" name="pwd" th:value="${u.pwd}"/></p>
+    <p><input type="submit" value="更新"></p>
+  </form>
+</div>
+<hr>
+<h4 th:text="${msg}"></h4>
+
+<div class="container">
+  <h2>修改密码</h2>
+  <form action="/update-password" method="post">
+    <label>
+      旧密码：<input type="text" name="oldPwd" required>
+    </label>
+    <label>
+      新密码：<input type="text" name="newPwd" required>
+    </label>
+    <label>
+      新密码验证：<input type="text" name="twoNewPwd" required>
+    </label>
+    <input type="submit" value="更改">
+  </form>
+</div>
+</body>
+</html>

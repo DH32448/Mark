@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.ClzDao" >
+
+        <!-- 插入 -->
+        <insert id="addClass">
+            insert into t_clz (clzno, clzname) values (#{clzno},#{clzname})
+        </insert>
+
+        <!-- 删除 -->
+        <delete id="deleteClass">
+            delete from t_clz where clzno = #{clzno}
+        </delete>
+
+        <!-- 更新 -->
+        <update id="updateClass">
+            update t_clz
+            set clzname = #{clzname}
+            where clzno = #{clzno}
+        </update>
+
+        <!-- 查询单个班级 -->
+<!--        <select id="getClassById" resultType="com.example.entity.Clz">-->
+<!--            select clzno, clzname from t_clz where clzno = #{clzno}-->
+<!--        </select>-->
+
+        <!-- 查询所有班级 -->
+        <select id="getAllClasses" resultType="com.example.entity.Clz">
+            select clzno, clzname from t_clz
+        </select>
+
+</mapper>
+
+
+

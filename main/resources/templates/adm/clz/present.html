@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Combined Data List</title>
+</head>
+<body>
+<h1>任务列表</h1>
+<table border="1">
+    <tr>
+        <th>序号</th>
+        <th>教师编号</th>
+        <th>班级编号</th>
+        <th>课程编号</th>
+    </tr>
+    <tr th:each="task : ${taskEntityList}">
+        <td th:text="${task.kid}"></td>
+        <td th:text="${task.tid}"></td>
+        <td th:text="${task.clzno}"></td>
+        <td th:text="${task.cno}"></td>
+    </tr>
+</table>
+
+<h1>班级列表</h1>
+<table border="1">
+    <tr>
+        <th>班级编号</th>
+        <th>班级名称</th>
+    </tr>
+    <tr th:each="classEntity : ${classEntityList}">
+        <td th:text="${classEntity.clzno}"></td>
+        <td th:text="${classEntity.clzname}"></td>
+    </tr>
+</table>
+
+<h1>课程列表</h1>
+<table border="1">
+    <tr>
+        <th>课程编号</th>
+        <th>课程名称</th>
+    </tr>
+    <tr th:each="courseEntity : ${courseEntityList}">
+        <td th:text="${courseEntity.cno}"></td>
+        <td th:text="${courseEntity.cname}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

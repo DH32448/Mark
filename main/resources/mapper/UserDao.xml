@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.UserDao" >
+
+<!--    <select id="findByRole" resultType="com.example.entity.User" >-->
+<!--        SELECT  * from t_user where role=#{role}-->
+
+
+    <insert id="add" >
+    insert into t_user (uid, uname, pwd, phone, clzno, role, pic) values (#{uid},#{uname},#{pwd},#{phone},#{clzno},#{role},#{pic})
+</insert>
+<delete id="del" >
+    delete from t_user where uid = #{uid}
+</delete>
+    <update id="updateUser">
+        update t_user
+        set uname = #{uname},
+            pwd = #{pwd},
+            phone = #{phone},
+            clzno = #{clzno},
+            role = #{role},
+            pic = #{pic}
+        where uid = #{uid}
+    </update>
+    <select id="findByPhone" resultType="com.example.entity.User">
+        SELECT  * from t_user where phone=#{phone}
+    </select>
+<!--  <select id="findById" resultType="com.example.entity.User">-->
+<!--        -->
+<!--  </select>-->
+
+</mapper>

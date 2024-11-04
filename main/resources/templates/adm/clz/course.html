@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>课程管理</title>
+</head>
+<body>
+<div>
+  <div th:each="x:${Course}">
+    <p th:text="${x.cno}">
+
+    </p>
+
+
+  </div>
+  <div>
+    <table border="1">
+      <tr>
+        <td>cno</td>
+        <td>cname</td>
+      </tr>
+      <tr th:each="x:${Course}">
+        <td th:text="${x.cno}"></td>
+        <td> th:text="${x.cname}"</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>

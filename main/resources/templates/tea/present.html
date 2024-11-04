@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>修改密码</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h2>修改密码</h2>
+  <form action="/update-password" method="post">
+    <label>
+      旧密码：<input type="text" name="oldPwd" required>
+    </label>
+    <label>
+      新密码：<input type="text" name="newPwd" required>
+    </label>
+    <label>
+      新密码验证：<input type="text" name="twoNewPwd" required>
+    </label>
+    <input type="submit" value="更改">
+  </form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.TaskDao">
+    <!-- 插入 -->
+    <insert id="addTask">
+        insert into t_task  (kid, tid, clzno, cno) values (#{kid},#{tid},#{clzno},#{cno})
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="deleteTask">
+        delete from t_task  where kid = #{kid}
+    </delete>
+
+    <!-- 更新 -->
+    <update id="updateTask">
+        update t_task
+        set tid = #{tid},
+            clzno = #{clzno},
+            cno = #{cno}
+        where kid = #{kid}
+    </update>
+
+    <!-- 查询单个任务 -->
+    <select id="getAllTasks" resultType="com.example.entity.Task">
+        select kid, tid, clzno, cno from t_task  where kid = #{kid}
+    </select>
+
+    <!-- 查询所有任务 -->
+<!--    <select id="getAllTasks" resultType="com.example.entity.Task">-->
+<!--        select kid, tid, clzno, cno from t_task-->
+<!--    </select>-->
+</mapper>
